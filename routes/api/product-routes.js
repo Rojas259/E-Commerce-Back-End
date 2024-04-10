@@ -78,4 +78,9 @@ router.delete('/:id', (req, res) => {
   .catch((err) => res.json(err));
 });
 
+ProductTag.belongsTo(Product, { 
+  foreignKey: 'product_id',
+  onDelete: 'CASCADE'
+});
+
 module.exports = router;
